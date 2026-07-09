@@ -33,37 +33,37 @@ const DEFAULT_GUARANTEES: Guarantee[] = [
     icon: faTag,
     title: "Flat-Rate Pricing. Always.",
     description:
-      "You get a firm price before we start — no hourly billing, no surprise add-ons. What we quote is what you pay.",
+      "You get a firm price before we start â€” no hourly billing, no surprise add-ons. What we quote is what you pay.",
   },
   {
     icon: faShieldHalved,
-    title: "1-Year Parts & Labor Warranty",
+    title: "Comfort & Efficiency Guarantee Â· 5-Year Workmanship",
     description:
-      "Every repair we perform is covered for a full year — parts and labor. If it fails within 12 months, we fix it at no charge.",
+      "Every installation we perform is covered for five full years of workmanship. If our work fails within 60 months, we make it right at no charge.",
   },
   {
     icon: faRotateLeft,
     title: "Satisfaction Guarantee",
     description:
-      "Not satisfied with our work? We'll return to make it right — or refund you. We stand behind every job, no exceptions.",
+      "Not satisfied with our work? We'll return to make it right â€” or refund you. We stand behind every job, no exceptions.",
   },
   {
     icon: faCertificate,
-    title: "NATE-Certified Technicians",
+    title: "BPI-Aligned Installers",
     description:
-      "Every tech who enters your home is NATE-certified and TDLR-licensed. No apprentices working alone — ever.",
+      "Every insulation specialist who enters your home is BPI-aligned. No unlicensed subs working alone â€” ever.",
   },
   {
     icon: faCalendarCheck,
     title: "No Contracts. No Lock-In.",
     description:
-      "Our maintenance plans are month-to-month. We earn your business with every visit — not by holding you hostage with a contract.",
+      "We earn your business with every visit â€” not by holding you hostage with a multi-year service contract.",
   },
   {
     icon: faStar,
     title: "On-Time or We Call Ahead",
     description:
-      "We respect your time. If we're running late, we call before your window closes — and we show up when we say we will.",
+      "We respect your time. If we're running late, we call before your window closes â€” and we show up when we say we will.",
   },
 ];
 
@@ -92,7 +92,7 @@ const GuaranteeSection: React.FC<GuaranteeSectionProps> = ({
             ))}
           </h2>
           <p className={styles.body}>
-            Every HVAC company in Central Texas makes promises. We back ours in writing — with flat-rate pricing, certified technicians, and a 1-year warranty on every repair we touch.
+            Every insulation company in Central Texas makes promises. We back ours in writing â€” with flat-rate pricing, BPI-aligned insulation specialists, and a Comfort & Efficiency Guarantee Â· 5-Year Workmanship on every install we touch.
           </p>
           <Link
             href={ctaLink}
@@ -117,7 +117,7 @@ const GuaranteeSection: React.FC<GuaranteeSectionProps> = ({
                 </svg>
               ))}
             </div>
-            <span className={styles.ratingText}>4.9 · 300+ verified Google reviews</span>
+            <span className={styles.ratingText}>4.9 Â· 800+ verified Google reviews</span>
           </div>
         </div>
 

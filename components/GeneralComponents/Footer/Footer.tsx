@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faLocationDot, faPhone, faEnvelope,
-  faShieldHalved, faWrench, faClock, faSnowflake,
+  faShieldHalved, faWrench, faClock, faBolt,
 } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookF, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import styles from './styles.module.scss';
@@ -19,30 +19,30 @@ const NAV_LINKS = [
 ];
 
 const SERVICE_LINKS = [
-  { href: '/services/ac-repair',          label: 'AC Repair' },
-  { href: '/services/heating',            label: 'Heating Service' },
-  { href: '/services/installation',       label: 'New Installation' },
-  { href: '/services/maintenance',        label: 'Maintenance Plans' },
-  { href: '/services/duct-cleaning',      label: 'Duct Cleaning' },
-  { href: '/services/indoor-air-quality', label: 'Indoor Air Quality' },
+  { href: '/services/attic-insulation',     label: 'Attic Insulation' },
+  { href: '/services/spray-foam',         label: 'Spray Foam' },
+  { href: '/services/blown-in-cellulose',        label: 'Blown-In Cellulose' },
+  { href: '/services/wall-insulation',  label: 'Wall Insulation' },
+  { href: '/services/air-sealing',label: 'Air Sealing' },
+  { href: '/services/energy-audits', label: 'Energy Audits' },
 ];
 
 const LOCAL_AREAS = [
   'Waco, TX', 'Hewitt, TX', 'Woodway, TX',
-  'Robinson, TX', 'China Spring, TX', 'Temple, TX',
-  'Killeen, TX', 'Hillsboro, TX',
+  'McGregor, TX', 'China Spring, TX', 'Temple, TX',
+  'Killeen, TX', 'Bellmead, TX',
 ];
 
 const TRUST_ITEMS = [
   { icon: faShieldHalved, label: 'Licensed & Insured' },
-  { icon: faWrench,       label: 'NATE Certified' },
+  { icon: faWrench,       label: 'BPI-Aligned' },
   { icon: faClock,        label: 'Same-Day Service' },
-  { icon: faSnowflake,    label: '1-Yr Warranty' },
+  { icon: faBolt,         label: 'Comfort & Efficiency Guarantee' },
 ];
 
 const SOCIALS = [
-  { href: 'https://facebook.com/arcticairhvac', icon: faFacebookF, label: 'Facebook' },
-  { href: 'https://g.page/r/arcticairhvac',     icon: faGoogle,    label: 'Google' },
+  { href: 'https://facebook.com/thermoshieldinsulation', icon: faFacebookF, label: 'Facebook' },
+  { href: 'https://g.page/r/thermoshieldinsulation',     icon: faGoogle,    label: 'Google' },
 ];
 
 export default function Footer() {
@@ -65,7 +65,7 @@ export default function Footer() {
             className={styles.trustCta}
             onClick={() => trackEvent({ eventType: 'click', elementLabel: 'Book Now', section: 'Footer-Trust' })}
           >
-            Book a Tech Today →
+            Book an Install Today →
           </Link>
         </div>
       </div>
@@ -88,29 +88,29 @@ export default function Footer() {
                 </svg>
               </span>
               <div className={styles.logoText}>
-                <span className={styles.logoName}>Arctic Air HVAC</span>
+                <span className={styles.logoName}>ThermoShield Insulation</span>
                 <span className={styles.logoSub}>Waco, Texas</span>
               </div>
             </Link>
 
             <p className={styles.tagline}>
-              Flat-rate pricing. Same-day service. Zero contracts — ever. Serving Central Texas homeowners since 2010.
+              Flat-rate pricing. Same-day service. Zero contracts — ever. Serving Central Texas homes and businesses since 2012.
             </p>
 
             <div className={styles.contactBlock}>
-              <a href="tel:+12549001234" className={styles.phoneLink}
+              <a href="tel:+12548505050" className={styles.phoneLink}
                 onClick={() => trackEvent({ eventType: 'phone_click', elementLabel: 'Footer Phone', section: 'Footer-Brand' })}>
                 <FontAwesomeIcon icon={faPhone} />
-                (254) 900-1234
+                (254) 850-5050
               </a>
-              <a href="mailto:contact@arcticairhvac.com" className={styles.emailLink}
+              <a href="mailto:hello@thermoshieldinsulation.com" className={styles.emailLink}
                 onClick={() => trackEvent({ eventType: 'email_click', elementLabel: 'Footer Email', section: 'Footer-Brand' })}>
                 <FontAwesomeIcon icon={faEnvelope} />
-                contact@arcticairhvac.com
+                hello@thermoshieldinsulation.com
               </a>
               <span className={styles.addressLine}>
                 <FontAwesomeIcon icon={faLocationDot} />
-                4521 Bosque Blvd, Waco, TX 76710
+                2201 S Valley Mills Dr, Waco, TX 76706
               </span>
             </div>
 
@@ -176,12 +176,12 @@ export default function Footer() {
       <div className={styles.bottomBar}>
         <div className={styles.bottomInner}>
           <p className={styles.copyright}>
-            &copy; {new Date().getFullYear()} Arctic Air HVAC. All Rights Reserved. | TDLR License #XXXXXXXX
+            &copy; {new Date().getFullYear()} ThermoShield Insulation. All Rights Reserved. | BPI-Aligned · Bonded & Insured
           </p>
-          <a href="tel:+12549001234" className={styles.emergencyBtn}
+          <a href="tel:+12548505050" className={styles.emergencyBtn}
             onClick={() => trackEvent({ eventType: 'phone_click', elementLabel: '24/7 Emergency', section: 'Footer-Bottom' })}>
             <span className={styles.emergencyDot} />
-            24/7 Emergency Line
+            Priority Service Line
           </a>
         </div>
       </div>

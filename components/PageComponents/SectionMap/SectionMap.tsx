@@ -93,11 +93,11 @@ export default function SectionMap() {
       hqEl.style.cssText = 'width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;';
       const hqDot = document.createElement('div');
       hqDot.className = 'hqMarker';
-      hqDot.style.cssText = 'width:32px;height:32px;background:#b1de00;border:4px solid #ffffff;border-radius:50%;box-shadow:0 0 0 8px rgba(177,222,0,0.3);';
+      hqDot.style.cssText = 'width:32px;height:32px;background:#4f46e5;border:4px solid #ffffff;border-radius:50%;box-shadow:0 0 0 8px rgba(79,70,229,0.3);';
       hqEl.appendChild(hqDot);
       new mapboxgl.Marker({ element: hqEl, anchor: 'center' })
         .setLngLat([-97.1315, 31.5548])
-        .setPopup(new mapboxgl.Popup().setHTML('<strong>Scott Applications HQ</strong><br>212 Dallas St, Waco, Texas 76704'))
+        .setPopup(new mapboxgl.Popup().setHTML('<strong>ThermoShield Insulation HQ</strong><br>2201 S Valley Mills Dr, Waco, TX 76706'))
         .addTo(currentMap);
 
       // ── CLIENT MARKERS ────────────────────────────
@@ -222,7 +222,7 @@ export default function SectionMap() {
       </div>
 
       <div className={styles.mapLegend}>
-        <div><span className={styles.hqDot} /> Scott Applications HQ – Waco</div>
+        <div><span className={styles.hqDot} /> ThermoShield Insulation HQ – Waco</div>
         <div><span className={styles.clientDot} /> Clients &amp; Towns Serviced</div>
       </div>
 

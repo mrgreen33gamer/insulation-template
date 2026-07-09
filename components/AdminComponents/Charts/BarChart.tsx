@@ -23,7 +23,7 @@ interface BarChartProps {
 
 export default function BarChart({
   data,
-  color      = '#f97316',
+  color      = '#4f46e5',
   horizontal = false,
   height     = 260,
 }: BarChartProps) {

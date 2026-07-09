@@ -1,176 +1,75 @@
-// Arctic Air HVAC — Services Overview
-// Order: Breadcrumb → SectionIntro → TrustBar → ServiceCards → WhatToExpect
-//        → ImpactMetrics → WhyChooseUs → ProcessTimeline → GuaranteeSection
-//        → Testimonials → LocalServiceAreas → ValueComparison → FAQ → CTABanner → Form
+// ThermoShield Insulation — Services Index
 "use client";
 
 import styles from "./page.module.scss";
-import reviews from '&/local-db/reviews';
-
-import Breadcrumb          from "#/PageComponents/Breadcrumb/Breadcrumb";
-import SectionIntro        from "#/PageComponents/SectionIntro/SectionIntro";
-import TrustBar            from "#/PageComponents/TrustBar/TrustBar";
+import Breadcrumb from "#/PageComponents/Breadcrumb/Breadcrumb";
+import SectionIntro from "#/PageComponents/SectionIntro/SectionIntro";
+import TrustBar from "#/PageComponents/TrustBar/TrustBar";
 import ServiceCardComponent from "#/PageComponents/ServiceCardComponent/ServiceCardComponent";
-import WhatToExpect        from "#/PageComponents/WhatToExpect/WhatToExpect";
-import ImpactMetrics       from "#/PageComponents/ImpactMetrics/ImpactMetrics";
-import WhyChooseUs         from "#/PageComponents/WhyChooseUs/WhyChooseUs";
-import ProcessTimeline     from "#/PageComponents/ProcessTimeline/ProcessTimeline";
-import GuaranteeSection    from "#/PageComponents/GuaranteeSection/GuaranteeSection";
-import Testimonials        from "#/PageComponents/Testimonials/Testimonials";
-import LocalServiceAreas   from "#/PageComponents/LocalServiceAreas/LocalServiceAreas";
-import ValueComparison     from "#/PageComponents/ValueComparison/ValueComparison";
-import FAQ                 from "#/PageComponents/FAQ/FAQ";
-import CTABanner           from "#/PageComponents/CTABanner/CTABanner";
-import Variant2            from "#/PageComponents/ContactForms/Variant2/Form";
+import WhyChooseUs from "#/PageComponents/WhyChooseUs/WhyChooseUs";
+import FAQ from "#/PageComponents/FAQ/FAQ";
+import CTABanner from "#/PageComponents/CTABanner/CTABanner";
+import Variant4 from "#/PageComponents/ContactForms/Variant4/Form";
 
 import {
-  faFan, faFire, faWrench, faFilter, faThermometerHalf, faWind,
-  faTrophy, faChartLine, faClock,
-  faHeadset, faSearch, faFileContract, faCheckCircle,
-  faShieldHalved, faLock, faRotateLeft, faBolt,
+  faHouseChimney, faSprayCan, faWind, faLayerGroup, faShieldHalved, faClipboardCheck,
+  faUsers, faStar,
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function ServicesPage() {
-
   const services = [
-    { icon: faFan,            title: "AC Repair",          body: "Fast, accurate diagnosis on all brands. Same-day service available — we stock common parts on every truck.",                           link: "/services/ac-repair" },
-    { icon: faFire,           title: "Heating Service",    body: "Furnace repair, heat pump service, and emergency heating calls across Central Texas — 7 days a week.",                                 link: "/services/heating" },
-    { icon: faWrench,         title: "New Installation",   body: "Right-sized system selection, clean installation, and full commissioning. Financing available for qualified homeowners.",               link: "/services/installation" },
-    { icon: faFilter,         title: "Duct Cleaning",      body: "Full duct cleaning and sanitizing for improved air quality and system efficiency. A real difference for allergy sufferers.",           link: "/services/duct-cleaning" },
-    { icon: faThermometerHalf, title: "Maintenance Plans", body: "Twice-yearly tune-ups that prevent breakdowns and keep your warranty valid. Month-to-month — no contracts.",                          link: "/services/maintenance" },
-    { icon: faWind,           title: "Indoor Air Quality", body: "Air purifiers, UV lights, whole-home humidifiers, and filtration upgrades that make your home healthier every day.",                   link: "/services/indoor-air-quality" },
-  ];
-
-  const expectations = [
-    { icon: faSearch,       title: "Free Diagnostic Visit",       description: "We inspect your system and explain exactly what's wrong with a flat-rate price before anything is touched. Diagnostic fee waived when you proceed." },
-    { icon: faCheckCircle,  title: "Upfront Flat-Rate Pricing",   description: "No hourly billing, no surprise fees. You approve the price before we start — and it never changes mid-job." },
-    { icon: faShieldHalved, title: "NATE-Certified Technicians",  description: "Every tech is NATE-certified, background-checked, and licensed in Texas. You know exactly who is coming to your home." },
-    { icon: faWrench,       title: "1-Year Parts & Labor Warranty", description: "Every repair we complete is backed by a full year of coverage on both parts and labor. No fine print." },
-  ];
-
-  const metrics = [
-    { icon: faTrophy,    value: 2400, label: "Homes and businesses served since 2010", suffix: "+", duration: 3 },
-    { icon: faChartLine, value: 98,   label: "Customer satisfaction rating",            suffix: "%", duration: 2 },
-    { icon: faClock,     value: 15,   label: "Years serving Waco and Central Texas",    suffix: "+", duration: 2 },
+    { icon: faHouseChimney,  title: "Attic Insulation", body: "R-value top-ups and full attic installs sized for Texas heat — cellulose, fiberglass, or hybrid packages.", link: "/services/attic-insulation" },
+    { icon: faSprayCan,      title: "Spray Foam", body: "Open- and closed-cell spray foam for attics, crawlspaces, and rim joists — air seal and insulate together.", link: "/services/spray-foam" },
+    { icon: faWind,          title: "Blown-In Cellulose", body: "Dense, even attic coverage that settles into gaps — fire-resistant and sound-dampening.", link: "/services/blown-in-cellulose" },
+    { icon: faLayerGroup,    title: "Wall Insulation", body: "Dense-pack cellulose for exterior walls — quieter rooms and fewer drafts without a full remodel.", link: "/services/wall-insulation" },
+    { icon: faShieldHalved,  title: "Air Sealing", body: "Seal attic penetrations, can lights, top plates, and ducts so insulation can actually perform.", link: "/services/air-sealing" },
+    { icon: faClipboardCheck, title: "Energy Audits", body: "Walk-through assessments and prioritized recommendations so you invest where it pays back.", link: "/services/energy-audits" },
   ];
 
   const whyFeatures = [
-    { icon: faBolt,          title: "Same-Day & Emergency Service",  description: "We staff for Central Texas summers. Emergency calls get answered and dispatched within the hour — evenings and weekends included." },
-    { icon: faHeadset,       title: "No Contracts, Ever",            description: "Our maintenance plans are month-to-month. Our repairs have no service agreements. You hire us because we do great work — not because you're locked in." },
-    { icon: faShieldHalved,  title: "Financing Available",           description: "New system replacement doesn't have to break the bank. We offer flexible financing options for qualified homeowners — ask us for details." },
-  ];
-
-  const processSteps = [
-    { number: 1, title: "Schedule",  description: "Call, text, or book online. We'll confirm a time that fits your schedule — usually same-day.", icon: faHeadset },
-    { number: 2, title: "Diagnose",  description: "Tech arrives on time, inspects your system, and explains the problem clearly — no pressure.",   icon: faSearch },
-    { number: 3, title: "Quote",     description: "Flat-rate written quote before any work starts. No surprises, no hidden fees.",                  icon: faFileContract },
-    { number: 4, title: "Fix",       description: "Completed with quality parts, site left clean, backed by our 1-year parts and labor warranty.", icon: faCheckCircle },
-  ];
-
-  const guarantees = [
-    { icon: faFileContract, title: "Flat-Rate Pricing",            description: "The price you approve is the price you pay. No hourly billing, no change orders mid-job." },
-    { icon: faRotateLeft,   title: "1-Year Repair Warranty",       description: "Every repair is backed by a full year of parts and labor coverage. No fine print." },
-    { icon: faHeadset,      title: "Real People Answer the Phone", description: "Call us at 10pm in July and someone in Waco answers. No call centers, no hold queues." },
-    { icon: faLock,         title: "Licensed, Bonded & Insured",   description: "TDLR-licensed, fully bonded, and insured. License number available on request." },
-  ];
-
-  const localAreas = [
-    { town: "Waco",         benefit: "Home base — best availability and fastest response in the city.", badge: "Home Base" },
-    { town: "Hewitt",       benefit: "Full residential and commercial service coverage.",                badge: "" },
-    { town: "Woodway",      benefit: "Same-day availability for Woodway-area homes.",                   badge: "" },
-    { town: "Robinson",     benefit: "Regular route — quick turnaround for Robinson customers.",        badge: "" },
-    { town: "China Spring", benefit: "Rural coverage with no trip charge for most locations.",          badge: "" },
-    { town: "Temple",       benefit: "Full service coverage for Bell County homes and businesses.",     badge: "" },
-  ];
-
-  const comparisonRows = [
-    { feature: "Flat-rate upfront pricing",       us: "✅ Always",         others: "❌ Hourly + surprise fees" },
-    { feature: "1-year parts & labor warranty",   us: "✅ Every repair",   others: "❌ Parts only, or none" },
-    { feature: "NATE-certified technicians",      us: "✅ All techs",      others: "❌ Varies" },
-    { feature: "No service contracts required",   us: "✅ Always",         others: "❌ Often required" },
-    { feature: "Emergency & same-day available",  us: "✅ 7 days a week",  others: "❌ Business hours only" },
+    { icon: faClipboardCheck, title: "Flat-Rate Written Quotes", description: "Firm price before we load a hose or open a bag. No hourly billing, no surprise add-ons mid-job." },
+    { icon: faShieldHalved, title: "BPI-Aligned Installers", description: "Every installer is BPI-aligned, bonded, and insured. No unlicensed freelancers in your attic." },
+    { icon: faUsers, title: "Locally Owned Since 2012", description: "Founded in Waco by Brooke Lang. Every decision is made locally — not by a distant franchise office." },
+    { icon: faStar, title: "Comfort & Efficiency Guarantee", description: "5-Year Workmanship on every install. If our work fails, we make it right." },
   ];
 
   const faq = [
-    { question: "How much does HVAC service cost in Waco?",         answer: "Repairs typically range from $150–$800 depending on the issue. New system installation runs $4,500–$12,000 depending on size and type. We always provide a flat-rate written quote before any work begins." },
-    { question: "Do you work on all HVAC brands?",                  answer: "Yes — all major brands including Carrier, Trane, Lennox, Rheem, Goodman, York, and more. We install Carrier and Trane as our primary brands for new systems." },
-    { question: "What does your maintenance plan include?",          answer: "Two visits per year — spring cooling tune-up and fall heating tune-up. Each includes a 20-point inspection, cleaning, filter check, refrigerant check, electrical check, and written report. Month-to-month, cancel anytime." },
-    { question: "Are you available for emergency calls?",            answer: "Yes — 7 days a week including evenings. We understand a broken AC in July is a genuine emergency. Emergency calls are dispatched within the hour." },
-    { question: "How long does a full AC replacement take?",         answer: "Most residential replacements take 4–6 hours. We carry common unit sizes in stock, so most installs happen the same week you request them — often same or next day." },
+    { question: "What insulation services do you offer?", answer: "Attic insulation, spray foam, blown-in cellulose, wall insulation, air sealing, and energy audits for residential and light commercial properties." },
+    { question: "How much does insulation cost in Waco?", answer: "Most attic projects range from a few hundred to a few thousand dollars depending on size and target R-value. Spray foam and wall dense-pack vary more. We always quote flat-rate before work begins." },
+    { question: "Do I need an energy audit first?", answer: "Not always — but audits help when comfort problems are unclear or you want a prioritized plan. Call (254) 850-5050 and we'll advise." },
+    { question: "Are you bonded and insured?", answer: "Yes — ThermoShield Insulation is bonded and insured with BPI-aligned installers." },
+    { question: "Do you offer a warranty?", answer: "Yes — Comfort & Efficiency Guarantee plus 5-Year Workmanship on installs we perform." },
+    { question: "Which areas do you serve?", answer: "Waco, Hewitt, Woodway, Temple, Killeen, McGregor, China Spring, Bellmead, and most of Central Texas within about 60 miles of Waco." },
   ];
 
   return (
-    <>
-      <Breadcrumb crumbs={[
-        { label: "Home",     href: "/" },
-        { label: "Services" },
-      ]} />
-
+    <main className={styles.pageWrapper}>
+      <Breadcrumb crumbs={[{ label: "Home", href: "/" }, { label: "Services" }]} />
       <SectionIntro
-        title="HVAC Services for Waco & Central Texas"
-        subtitle="Repair, replacement, maintenance, and air quality — done right, priced fairly, backed by a 1-year warranty on every job."
+        title="Insulation Services in Waco & Central Texas"
+        subtitle="Attic, spray foam, cellulose, walls, air sealing, and energy audits — done right, priced upfront, backed by a Comfort & Efficiency Guarantee · 5-Year Workmanship."
       />
-
-      <TrustBar headline="Trusted by 2,400+ Central Texas homes and businesses since 2010" />
-
+      <TrustBar headline="BPI-aligned · Bonded & insured · 3,200+ homes insulated" />
       <div className={styles.section}>
-        <ServiceCardComponent heading="What We Do" cards={services} />
+        <ServiceCardComponent heading="Our Insulation Services" cards={services} />
       </div>
-
       <div className={styles.section}>
-        <WhatToExpect sectionTitle="How Every Service Call Works" expectations={expectations} />
+        <WhyChooseUs cityName="Waco" features={whyFeatures} title="Why Homeowners Choose ThermoShield" />
       </div>
-
       <div className={styles.section}>
-        <ImpactMetrics title="Results That Speak for Themselves" metrics={metrics} cityName="Waco" />
+        <FAQ cityName="Waco" faq={faq} title="Service Questions" />
       </div>
-
       <div className={styles.section}>
-        <WhyChooseUs cityName="Waco" features={whyFeatures} title="Why Central Texas Chooses Arctic Air" />
+        <Variant4 title="Request a Free Insulation Quote" cityName="Waco" slug="services" spot="services-index-form" formVariant={2} />
       </div>
-
-      <div className={styles.section}>
-        <ProcessTimeline steps={processSteps} />
-      </div>
-
-      <div className={styles.section}>
-        <GuaranteeSection guarantees={guarantees} />
-      </div>
-
-      <div className={styles.section}>
-        <Testimonials testimonials={reviews} />
-      </div>
-
-      <div className={styles.section}>
-        <LocalServiceAreas cityName="Waco" areas={localAreas} servicePath="services" title="Serving All of Central Texas" />
-      </div>
-
-      <div className={styles.section}>
-        <ValueComparison rows={comparisonRows} />
-      </div>
-
-      <div className={styles.section}>
-        <FAQ cityName="Waco" faq={faq} title="HVAC Service FAQs" />
-      </div>
-
       <CTABanner
-        headline="Ready to Schedule Your Service?"
-        subline="Same-day and emergency service available. Flat-rate pricing, 1-year warranty, no contracts ever."
-        primaryText="Call Us Now"
-        primaryLink="tel:+12549001234"
-        secondaryText="Schedule Online"
+        headline="Ready to Improve Comfort and Cut Energy Waste?"
+        subline="Flat-rate quotes. BPI-aligned installers. Serving all of Central Texas."
+        primaryText="Call (254) 850-5050"
+        primaryLink="tel:+12548505050"
+        secondaryText="Contact Us"
         secondaryLink="/contact"
       />
-
-      <div className={styles.section}>
-        <Variant2
-          title="Request a Service or Free Estimate"
-          cityName="Waco"
-          slug="services"
-          spot="services-page-form"
-          formVariant={2}
-        />
-      </div>
-    </>
+    </main>
   );
 }

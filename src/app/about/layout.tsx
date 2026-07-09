@@ -1,93 +1,66 @@
-// src/app/about/layout.tsx
 import type { Metadata } from "next";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://hvac-pro-template.vercel.app';
-const url      = `${BASE_URL}/about`;
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.thermoshieldinsulation.com";
 
 export const metadata: Metadata = {
-  title: "About Arctic Air HVAC — Waco TX Heating & Cooling Company Since 2010",
+  title: "About ThermoShield Insulation — Waco TX Insulation Company Since 2012",
   description:
-    "Meet the Arctic Air HVAC team. Locally owned and operated in Waco, Texas since 2010. NATE-certified technicians, TDLR-licensed, honest pricing, and a 1-year warranty on every repair. Serving Waco, Hewitt, Woodway, Robinson, and all of Central Texas.",
+    "Meet the ThermoShield Insulation team. Locally owned and operated in Waco, Texas since 2012. BPI-aligned installers, bonded & insured, Comfort & Efficiency Guarantee · 5-Year Workmanship. Serving Waco, Hewitt, Woodway, and all of Central Texas.",
   keywords: [
-    "about Arctic Air HVAC",
-    "Waco HVAC company",
-    "HVAC contractor Waco TX",
-    "locally owned HVAC Waco",
-    "NATE certified HVAC Waco Texas",
-    "Central Texas heating cooling company",
-    "HVAC company history Waco",
-    "Mike Hawkins Arctic Air HVAC",
+    "about ThermoShield Insulation",
+    "Waco insulation company",
+    "insulation contractor Waco TX",
+    "locally owned insulation Waco",
+    "BPI aligned insulation Waco Texas",
+    "Brooke Lang ThermoShield",
   ],
-  alternates: { canonical: url },
+  alternates: { canonical: `${BASE_URL}/about` },
   openGraph: {
-    title: "About Arctic Air HVAC — Waco TX Heating & Cooling Company Since 2010",
+    title: "About ThermoShield Insulation — Waco TX Insulation Company Since 2012",
     description:
-      "Locally owned and operated in Waco since 2010. NATE-certified, TDLR-licensed, flat-rate pricing, 1-year warranty on every repair. Serving all of Central Texas.",
-    url,
-    siteName: "Arctic Air HVAC",
+      "Locally owned insulation company in Waco, TX. BPI-aligned, flat-rate pricing, Comfort & Efficiency Guarantee · 5-Year Workmanship.",
+    url: `${BASE_URL}/about`,
+    siteName: "ThermoShield Insulation",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Arctic Air HVAC — Waco TX Since 2010",
-    description:
-      "Locally owned HVAC company in Waco, TX. NATE-certified, flat-rate pricing, 1-year repair warranty.",
+    title: "About ThermoShield Insulation — Waco TX Since 2012",
+    description: "Locally owned insulation company in Waco, TX. BPI-aligned, flat-rate pricing.",
   },
-  robots: { index: true, follow: true },
 };
 
-const localBusinessSchema = {
+const aboutSchema = {
   "@context": "https://schema.org",
-  "@type": "HVACBusiness",
-  "@id": `${BASE_URL}/#organization`,
-  name: "Arctic Air HVAC",
-  url: BASE_URL,
-  telephone: "+12549001234",
-  email: "contact@arcticairhvac.com",
-  foundingDate: "2010",
-  founder: {
-    "@type": "Person",
-    name: "Mike Hawkins",
-    jobTitle: "Owner & Master HVAC Technician",
+  "@type": "AboutPage",
+  name: "About ThermoShield Insulation",
+  url: `${BASE_URL}/about`,
+  mainEntity: {
+    "@type": "HomeAndConstructionBusiness",
+    name: "ThermoShield Insulation",
+    telephone: "+12548505050",
+    email: "hello@thermoshieldinsulation.com",
+    foundingDate: "2012",
+    founder: { "@type": "Person", name: "Brooke Lang" },
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "2201 S Valley Mills Dr",
+      addressLocality: "Waco",
+      addressRegion: "TX",
+      postalCode: "76706",
+      addressCountry: "US",
+    },
   },
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "4521 Bosque Blvd",
-    addressLocality: "Waco",
-    addressRegion: "TX",
-    postalCode: "76710",
-    addressCountry: "US",
-  },
-  areaServed: [
-    { "@type": "City", name: "Waco",         containedInPlace: { "@type": "State", name: "Texas" } },
-    { "@type": "City", name: "Hewitt",       containedInPlace: { "@type": "State", name: "Texas" } },
-    { "@type": "City", name: "Woodway",      containedInPlace: { "@type": "State", name: "Texas" } },
-    { "@type": "City", name: "Robinson",     containedInPlace: { "@type": "State", name: "Texas" } },
-    { "@type": "City", name: "China Spring", containedInPlace: { "@type": "State", name: "Texas" } },
-    { "@type": "City", name: "Temple",       containedInPlace: { "@type": "State", name: "Texas" } },
-    { "@type": "City", name: "Killeen",      containedInPlace: { "@type": "State", name: "Texas" } },
-    { "@type": "City", name: "Valley Mills", containedInPlace: { "@type": "State", name: "Texas" } },
-  ],
-  sameAs: [
-    "https://www.facebook.com/arcticairhvac",
-  ],
-};
-
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home",  item: BASE_URL },
-    { "@type": "ListItem", position: 2, name: "About", item: url },
-  ],
 };
 
 export default function AboutLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }}
+      />
       {children}
     </>
   );
