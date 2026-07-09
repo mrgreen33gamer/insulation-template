@@ -35,36 +35,42 @@ export default function HomePage() {
       title: "Attic Insulation",
       body: "Top-ups and full attic installs to the R-value Texas heat demands — blown-in cellulose, fiberglass, or hybrid packages sized for your home.",
       link: "/services/attic-insulation",
+      image: "/pages/home/services/service-1.jpg",
     },
     {
       icon: faSprayCan,
       title: "Spray Foam",
       body: "Open- and closed-cell spray foam for attics, crawlspaces, and rim joists — air seal and insulate in one high-performance system.",
       link: "/services/spray-foam",
+      image: "/pages/home/services/service-2.jpg",
     },
     {
       icon: faWind,
       title: "Blown-In Cellulose",
       body: "Dense, even coverage that settles into gaps and around framing — fire-resistant, sound-dampening, and ideal for Central Texas attics.",
       link: "/services/blown-in-cellulose",
+      image: "/pages/home/services/service-3.jpg",
     },
     {
       icon: faLayerGroup,
       title: "Wall Insulation",
       body: "Dense-pack cellulose and cavity fills for exterior walls — quieter rooms, fewer drafts, and better comfort without a full remodel.",
       link: "/services/wall-insulation",
+      image: "/pages/home/services/service-4.jpg",
     },
     {
       icon: faShieldHalved,
       title: "Air Sealing",
       body: "Seal attic penetrations, can lights, top plates, and ducts so conditioned air stays inside and dust stays out.",
       link: "/services/air-sealing",
+      image: "/pages/home/services/service-1.jpg",
     },
     {
       icon: faClipboardCheck,
       title: "Energy Audits",
       body: "Walk-through assessments, thermal imaging, and prioritized recommendations so you invest where it actually pays back.",
       link: "/services/energy-audits",
+      image: "/pages/home/services/service-2.jpg",
     },
   ];
 
@@ -180,13 +186,10 @@ export default function HomePage() {
 
   return (
     <main className={styles.pageWrapper}>
-
       <WelcomePage />
-
       <TrustBar
         headline="Waco's trusted insulation company — BPI-aligned, insured, and guaranteed on every job"
       />
-
       <div className={styles.section}>
         <ImpactMetrics
           title="Numbers That Speak for Us"
@@ -194,14 +197,15 @@ export default function HomePage() {
           cityName="Waco"
         />
       </div>
-
       <div className={styles.section}>
         <ServiceCardComponent
           heading="Complete Insulation Services for Your Home"
           cards={services}
         />
       </div>
-
+      <div className={styles.section}>
+        <ProcessTimeline steps={processSteps} />
+      </div>
       <div className={styles.section}>
         <WhyChooseUs
           cityName="Waco"
@@ -209,7 +213,45 @@ export default function HomePage() {
           title="What Makes ThermoShield Insulation Different"
         />
       </div>
-
+      <CTABanner
+        headline="Comfort Starts in the Attic."
+        subline="Blown-in, batts, and air sealing that cut drafts and energy bills — measured, not guessed."
+        primaryText="Call (254) 850-5050"
+        primaryLink="tel:+12548505050"
+        secondaryText="Free Attic Eval"
+        secondaryLink="/contact"
+        imageSrc="/pages/home/welcome/hero-main.jpg"
+      />
+      <div className={styles.section}>
+        <Testimonials testimonials={reviews} />
+      </div>
+      <div className={styles.section}>
+        <GuaranteeSection />
+      </div>
+      <div className={styles.section}>
+        <LocalServiceAreas
+          cityName="Waco"
+          areas={localAreas}
+          servicePath=""
+          title="Serving All of Central Texas"
+        />
+      </div>
+      <div className={styles.section}>
+        <WhatToExpect
+          sectionTitle="Every Project, Every Time"
+          expectations={expectations}
+        />
+      </div>
+      <div className={styles.section}>
+        <FAQ
+          cityName="Waco"
+          faq={faq}
+          title="Insulation Questions — Answered Straight"
+        />
+      </div>
+      <div className={styles.section}>
+        <BlogPreviewGrid />
+      </div>
       <div className={styles.section}>
         <Variant4
           title="Request Service or a Free Quote"
@@ -219,56 +261,6 @@ export default function HomePage() {
           formVariant={2}
         />
       </div>
-
-      <div className={styles.section}>
-        <ProcessTimeline steps={processSteps} />
-      </div>
-
-      <div className={styles.section}>
-        <Testimonials testimonials={reviews} />
-      </div>
-
-      <div className={styles.section}>
-        <GuaranteeSection />
-      </div>
-
-      <CTABanner
-        headline="Hot Attic? High Bills? Uneven Rooms? We're Ready."
-        subline="Assessments and installs across Waco, Hewitt, Woodway, Temple, and all of Central Texas. Flat-rate pricing. Comfort & Efficiency Guarantee · 5-Year Workmanship."
-        primaryText="Call (254) 850-5050"
-        primaryLink="tel:+12548505050"
-        secondaryText="Book Online"
-        secondaryLink="/contact"
-      />
-
-      <div className={styles.section}>
-        <LocalServiceAreas
-          cityName="Waco"
-          areas={localAreas}
-          servicePath=""
-          title="Serving All of Central Texas"
-        />
-      </div>
-
-      <div className={styles.section}>
-        <WhatToExpect
-          sectionTitle="Every Project, Every Time"
-          expectations={expectations}
-        />
-      </div>
-
-      <div className={styles.section}>
-        <FAQ
-          cityName="Waco"
-          faq={faq}
-          title="Insulation Questions — Answered Straight"
-        />
-      </div>
-
-      <div className={styles.section}>
-        <BlogPreviewGrid />
-      </div>
-
     </main>
   );
 }
