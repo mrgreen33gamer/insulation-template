@@ -124,7 +124,7 @@ export const metadata: Metadata = {
     siteName: "ThermoShield Insulation",
     images: [
       {
-        url: `${BASE_URL}/logos/scott-apps-banner.png?v=1`,
+        url: `${BASE_URL}/pages/home/welcome/hero-main.jpg`,
         width: 1200,
         height: 630,
         alt: "ThermoShield Insulation — Waco TX Attic, Wall & Spray Foam",
@@ -138,7 +138,7 @@ export const metadata: Metadata = {
     title: "ThermoShield Insulation | Waco TX Insulation Pros",
     description:
       "Attic insulation, spray foam, cellulose, wall insulation & air sealing for Central Texas. BPI-aligned & insured — Comfort & Efficiency Guarantee.",
-    images: [`${BASE_URL}/logos/scott-apps-banner.png?v=1`],
+    images: [`${BASE_URL}/pages/home/welcome/hero-main.jpg`],
   },
   robots: {
     index: true,

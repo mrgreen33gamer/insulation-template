@@ -63,14 +63,14 @@ export default function HomePage() {
       title: "Air Sealing",
       body: "Seal attic penetrations, can lights, top plates, and ducts so conditioned air stays inside and dust stays out.",
       link: "/services/air-sealing",
-      image: "/pages/home/services/service-1.jpg",
+      image: "/pages/home/welcome/before.jpg",
     },
     {
       icon: faClipboardCheck,
       title: "Energy Audits",
       body: "Walk-through assessments, thermal imaging, and prioritized recommendations so you invest where it actually pays back.",
       link: "/services/energy-audits",
-      image: "/pages/home/services/service-2.jpg",
+      image: "/pages/home/welcome/after.jpg",
     },
   ];
 
