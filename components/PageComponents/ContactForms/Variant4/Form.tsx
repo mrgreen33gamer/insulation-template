@@ -257,7 +257,7 @@ export default function Variant4({ title, cityName, slug, spot, formVariant }: V
                     )}
                     <button type="submit" disabled={isSubmitting} className={styles.nextBtn}>
                       {isSubmitting
-                        ? <PulseLoader size={8} color="#0d1b2a" />
+                        ? <PulseLoader size={8} color="#2a200d" />
                         : <><span>Get My Free Quote</span><FontAwesomeIcon icon={faArrowRight} /></>}
                     </button>
                   </form>

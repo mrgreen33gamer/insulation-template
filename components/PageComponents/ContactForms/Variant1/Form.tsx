@@ -200,7 +200,7 @@ export default function Variant1({ title, cityName, slug, spot, formVariant }: V
                   <div className={styles.submitRow}>
                     <button type="submit" disabled={isSubmitting} className={styles.submitBtn}>
                       {isSubmitting
-                        ? <PulseLoader size={8} color="#0d1b2a" />
+                        ? <PulseLoader size={8} color="#2a200d" />
                         : <><span>Request Service</span><FontAwesomeIcon icon={faArrowRight} /></>}
                     </button>
                     <div className={styles.altContact}>

@@ -357,7 +357,7 @@ export default function ContactPage() {
 
                     <button type="submit" disabled={isSubmitting} className={styles.submitBtn}>
                       {isSubmitting
-                        ? <PulseLoader size={8} color="#0d1b2a" />
+                        ? <PulseLoader size={8} color="#2a200d" />
                         : (
                           <>
                             <span>Send Request</span>

@@ -9,7 +9,7 @@
 //                                the rest of the safe-area CSS in globals.css
 //                                does NOTHING — that's why you were seeing
 //                                white bars on top and bottom on iPhone.
-//     - themeColor: '#0d1b2a' → tints the iOS Safari URL bar / Android
+//     - themeColor: '#2a200d' → tints the iOS Safari URL bar / Android
 //                                status bar to match the brand obsidian dark.
 //                                Two values supplied so Safari can pick the
 //                                right one for light vs dark mode.
@@ -264,7 +264,7 @@ export default function RootLayout({
           <Header />
         </ConditionalShell>
 
-        <NextTopLoader color="#38bdf8" showSpinner={false} />
+        <NextTopLoader color="#fb923c" showSpinner={false} />
 
         <Suspense fallback={null}>
           <Analytics />
@@ -283,7 +283,7 @@ export default function RootLayout({
                   background: "#172554",
                 }}
               >
-                <PulseLoader size={50} color="#38bdf8" />
+                <PulseLoader size={50} color="#fb923c" />
               </div>
             }
           >

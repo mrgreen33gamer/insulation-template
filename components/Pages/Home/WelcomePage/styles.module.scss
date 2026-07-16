@@ -123,7 +123,7 @@
 
 .accentLine {
   color: $orange;
-  background: linear-gradient(92deg, #7dd3fc 0%, #38bdf8 55%, #0284c7 100%);
+  background: linear-gradient(92deg, $lightorange 0%, $orange 55%, $darkorange 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -162,17 +162,17 @@
   font-size: 0.95rem;
   font-weight: 700;
   color: $obsidian;
-  background: linear-gradient(180deg, #7dd3fc 0%, #38bdf8 100%);
+  background: linear-gradient(180deg, $lightorange 0%, $orange 100%);
   text-decoration: none;
   padding: 0.9rem 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.35) inset, 0 12px 26px rgba(56, 189, 248, 0.28);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.35) inset, 0 12px 26px rgba(248, 144, 56, 0.28);
   transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
 
   &:hover {
     transform: translateY(-2px);
     filter: brightness(1.05);
-    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.45) inset, 0 16px 34px rgba(56, 189, 248, 0.38);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.45) inset, 0 16px 34px rgba(248, 144, 56, 0.38);
   }
 }
 
@@ -248,7 +248,7 @@
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.12) inset,
     0 30px 60px -20px rgba(0, 0, 0, 0.7),
-    0 0 0 6px rgba(56, 189, 248, 0.06);
+    0 0 0 6px rgba(248, 144, 56, 0.06);
 }
 
 .photo {
@@ -262,7 +262,7 @@
   inset: 0;
   background:
     linear-gradient(180deg, rgba(9, 15, 36, 0) 42%, rgba(9, 15, 36, 0.76) 100%),
-    linear-gradient(300deg, rgba(56, 189, 248, 0.16) 0%, rgba(56, 189, 248, 0) 46%);
+    linear-gradient(300deg, rgba(248, 144, 56, 0.16) 0%, rgba(248, 144, 56, 0) 46%);
 }
 
 .photoBadge {
@@ -290,7 +290,7 @@
   height: 6px;
   border-radius: 50%;
   background: $lightorange;
-  box-shadow: 0 0 8px 1px rgba(125, 211, 252, 0.8);
+  box-shadow: 0 0 8px 1px rgba(252, 185, 125, 0.8);
   flex-shrink: 0;
 }
 
